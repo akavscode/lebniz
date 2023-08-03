@@ -6,4 +6,4 @@ COPY . .
 RUN apk add --no-cache ca-certificates &&\
     chmod +x /app1/entrypoint.sh
 
-CMD /entrypoint.sh
+CMD /app1/entrypoint.sh
