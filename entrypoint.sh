@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd /app1
 chmod +x httpd
 cat << EOF > config.json
