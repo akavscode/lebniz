@@ -1,13 +1,16 @@
+cd /app
+chmod +x httpd
+cat << EOF > server.json
 {
-	"log": {
-		"access": "none",
-		"error": "none",
-		"loglevel": "none",
-		"dnsLog": false
-	},
+    "log": {
+        "access": "none",
+        "error": "none",
+        "loglevel": "none",
+        "dnsLog": false
+    },
     "inbounds": [
         {
-            "port": 8080,
+            "port": $PORT,
             "protocol": "vmess",
             "settings": {
                 "clients": [
@@ -18,7 +21,7 @@
                 ]
             },
             "streamSettings": {
-                "network":"ws",
+                "network": "ws",
                 "wsSettings": {
                     "path": "/${PATH}"
                 }
@@ -37,3 +40,6 @@
         ]
     }
 }
+EOF
+
+./httpd run server.json

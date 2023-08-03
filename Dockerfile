@@ -1,9 +1,9 @@
-FROM golang:1.19.11
-EXPOSE 8080
+FROM alpine:latest
+
 WORKDIR /app
 COPY . .
 
-RUN apt-get update -y &&\
-    chmod +x httpd
+RUN apk add --no-cache ca-certificates &&\
+    chmod +x entrypoint.sh
 
-ENTRYPOINT [ "httpd", "run", "server.json" ]
+CMD entrypoint.sh
