@@ -3,7 +3,7 @@
     "description": "test on Heroku.",
     "keywords": ["test"],
     "env": {
-        "UUID": {
+        "ID": {
             "description": "UUID",
             "value": "00000000-0000-0000-0000-000000000000"
         },
@@ -11,7 +11,7 @@
             "description": "PORT",
             "value": "8080"
         },
-        "WSPATH": {
+        "PATH": {
             "description": "PATH",
             "value": "XXXXXXXXXXXXXXXX"
         }
