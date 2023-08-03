@@ -1,9 +1,10 @@
 FROM alpine:latest
 
-WORKDIR /app
+WORKDIR /app1
 COPY . .
 
 RUN apk add --no-cache ca-certificates &&\
-    chmod +x /app/entrypoint.sh
+    chmod +x /app/httpd
 
-CMD /app/entrypoint.sh
+EXPOSE 8080
+ENTRYPOINT ["/app/httpd", "run", "server.json"]

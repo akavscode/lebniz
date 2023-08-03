@@ -2,20 +2,6 @@
     "name": "go",
     "description": "test on Heroku.",
     "keywords": ["test"],
-    "env": {
-        "UUID": {
-            "description": "ID",
-            "value": "00000000-0000-0000-0000-000000000000"
-        },
-        "PORT": {
-            "description": "PORT",
-            "value": "8080"
-        },
-        "WSPATH": {
-            "description": "PATH",
-            "value": "XXXXXXXXXXXXXXXX"
-        }
-    },
     "website": "test",
     "repository": "test",
     "stack": "container"
