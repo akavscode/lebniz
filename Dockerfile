@@ -4,6 +4,6 @@ WORKDIR /app
 COPY . .
 
 RUN apk add --no-cache ca-certificates &&\
-    chmod +x entrypoint.sh
+    chmod +x /app/entrypoint.sh
 
-CMD entrypoint.sh
+CMD /app/entrypoint.sh
