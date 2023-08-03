@@ -4,7 +4,6 @@ WORKDIR /app1
 COPY . .
 
 RUN apk add --no-cache ca-certificates &&\
-    chmod +x /app/httpd
+    chmod +x /app1/entrypoint.sh
 
-EXPOSE 8080
-ENTRYPOINT ["/app/httpd", "run", "server.json"]
+CMD /entrypoint.sh

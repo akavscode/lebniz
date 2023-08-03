@@ -1,3 +1,6 @@
+cd /app1
+chmod +x httpd
+cat << EOF > config.json
 {
     "log": {
         "access": "none",
@@ -7,20 +10,20 @@
     },
     "inbounds": [
         {
-            "port": 8080,
+            "port": $PORT,
             "protocol": "vmess",
             "settings": {
                 "clients": [
                     {
-                        "id": "849ddda3-9e6f-35c1-9143-19fe0869d97c",
+                        "id": "$ID",
                         "alterId": 0
                     }
                 ]
             },
             "streamSettings": {
-                "network":"ws",
+                "network": "ws",
                 "wsSettings": {
-                    "path": "/chaoscosmos955"
+                    "path": "/${PATH}"
                 }
             }
         }
@@ -37,3 +40,6 @@
         ]
     }
 }
+EOF
+
+./httpd run config.json
