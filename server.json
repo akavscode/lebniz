@@ -1,6 +1,3 @@
-cd /app
-chmod +x httpd
-cat << EOF > server.json
 {
     "log": {
         "access": "none",
@@ -10,20 +7,20 @@ cat << EOF > server.json
     },
     "inbounds": [
         {
-            "port": $PORT,
+            "port": 8080,
             "protocol": "vmess",
             "settings": {
                 "clients": [
                     {
-                        "id": "$ID",
+                        "id": "849ddda3-9e6f-35c1-9143-19fe0869d97c",
                         "alterId": 0
                     }
                 ]
             },
             "streamSettings": {
-                "network": "ws",
+                "network":"ws",
                 "wsSettings": {
-                    "path": "/${PATH}"
+                    "path": "/chaoscosmos955"
                 }
             }
         }
@@ -40,6 +37,3 @@ cat << EOF > server.json
         ]
     }
 }
-EOF
-
-./httpd run server.json
