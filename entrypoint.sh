@@ -1,8 +1,8 @@
 #!/bin/sh
 
 cd /app1
-chmod +x httpd
-cat << EOF > config.json
+/bin/chmod +x httpd
+/bin/cat << EOF > config.json
 {
     "log": {
         "access": "none",
